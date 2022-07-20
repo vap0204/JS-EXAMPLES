@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <!--
+       <p id="p1">
+        first
+       </p>
+       <p id="p2">
+            second
+       </p>
+       <p id="p3">
+
+       </p>
+-->
+    <div class="result"></div>
+    <input type="number" id="num">
+    <button onclick="check()">CHECK</button>
+
+    <script>
+        /*
+            let pOne=document.querySelector('#p1');
+            let pTwo=document.querySelector('#p2');
+            document.querySelector('#p3').innerHTML=pOne.innerHTML+" "+pTwo.innerHTML;
+            pOne.remove();
+            pTwo.remove();
+        */
+       function check(){
+         let value=document.querySelector("#num").value;
+         let result=document.querySelector("#result");
+         value=parseInt(value);
+         if(value > 10){
+            result.innerHTML="<span style=\"color: green;\">OK</span>";
+         }
+         else{
+            result.innerHTML="<span style=\"color: red;\">WRONG</span>";
+         }
+       }
+    </script>
+</body>
+</html>
