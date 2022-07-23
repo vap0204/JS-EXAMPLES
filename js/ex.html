@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #img-box{
+                width: 600px;
+                height:300px;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+
+       <!--ex1 
+        	    <button onclick="hello()">CLICK</button>
+        --> 
+
+        <!--
+            ex3
+
+            <div id="example" data-id="123" data-name="Gosho">123</div>
+        -->
+
+                <!--EX4
+                    
+                <p id="p1">
+                    first
+                </p>
+
+                <p id="p2">
+                    second
+                </p>
+
+                <p id="p3">
+
+                </p>
+                -->
+                
+            <!--
+                ex5
+                  <div id="result"></div>
+                  <input type="number" id="num" >
+                  <button onclick="check()">CHECK</button>
+            -->
+           
+            <!--
+                ex6
+                <div id="result"></div>
+                <input type="text" id="num" oninput="check(this)">
+            -->
+
+            <!--
+                ex7
+                 <div id="result"></div>
+                 <input type="text" id="num" oninput="check(this)">
+            -->
+            
+           <!--
+             ex8
+
+                 <div id="img-box">
+            <img id="img"src="1.jpg" alt="">
+           </div>
+           <br>
+           <button onclick="previous()">Previous</button>
+           <button onclick="next()">Next</button>
+
+           -->
+
+           <!--
+             ex9
+             <div id="img-box">
+            <img id="img"src="1.jpg" alt="">
+           </div>
+           <br>
+           <select onchange="changeImg(this)"id="images">
+                <option value="1.jpg">First</option>
+                <option value="2.jpg">Second</option>
+                <option value="3.jpg">Third</option>
+    
+           </select>
+       
+           -->
+
+           <!--
+             ex10
+                <div>
+            First Num:<input type="number"  id="firstNum">
+            Sign: <input type="text" id="sign">
+            Second Num:<input type="number"  id="secondNum">
+            <button onclick="calculate()">Calculate</button>
+            <div id="result"></div>
+           </div>
+           
+
+           -->
+
+           
+        <script>
+            /* 
+            ex1 
+
+           function hello(){
+                alert('Hello!');
+           }
+            */
+
+            /*
+                ex2
+
+                 function another(){
+                let a=5;
+                let b=10;
+                let r= sum(a,b);
+                console.log(r);
+           }
+
+            function sum(paramOne,paramTwo){
+                let result= paramOne + paramTwo;
+
+                return result;
+            }
+          
+            another();
+
+            */
+
+            /*
+                 ex3
+
+                      let el=document.querySelector('#example');
+                      console.log(el.getAttribute("data-name"));
+                      console.log(el.getAttribute("data-id"));
+                      el.setAttribute("data-age",25);
+
+
+            */
+
+
+            /*
+                    ex4 
+
+                     let elOne=document.querySelector('#p1');
+                    let elTwo=document.querySelector('#p2');
+                    document.querySelector("#p3").innerHTML = elOne.innerHTML + " " + elTwo.innerHTML;
+                    elOne.remove();
+                    elTwo.remove();
+            */
+
+            /*
+             ex5 
+             function check(){
+                let value=document.querySelector("#num").value;
+                let result = document.querySelector("#result");
+                value=parseInt(value);
+                if(value > 10) {
+                        result.innerHTML=" <span style=\"color:green\">OK</span>";
+                }
+                else{
+                    result.innerHTML=" <span style=\"color:red\">WRONG</span>";
+                }
+           }
+            */
+           
+            /*
+              ex6
+               function check(el){
+                let resultDiv=document.querySelector('#result');
+                if(el.value=="bike"){
+                    resultDiv.innerHTML= '<div>MIN 5 YEARS OLD </div>';
+                }
+                else if(el.value=="car" || el.value=="motorbike"){
+                    resultDiv.innerHTML= '<div>MIN 18 YEARS OLD </div>';
+                }
+                else{
+                    resultDiv.innerHTML = '';
+                }
+            }
+
+            */
+
+            /*
+              ex7 
+               function check(el){
+                let resultDiv=document.querySelector('#result');
+                if(isNaN(el.value)){
+                    resultDiv.innerHTML= '<div>TEXT </div>';
+                }
+                else {
+                    resultDiv.innerHTML= '<div>NUMBER </div>';
+                }
+                
+            }
+            */
+
+                /*
+                  ex8
+                    let currentImage=1;
+                function next(){
+                    if(currentImage<3){
+                        currentImage++;
+                    }
+                    else{
+                        currentImage=1;
+                    }
+                    document.querySelector('#img').setAttribute("src",currentImage+ ".jpg");
+                    console.log(currentImage);
+                }
+
+                function previous(){
+                    if(currentImage<=1){
+                        currentImage=3;
+                    }
+                    else{
+                        currentImage--;
+                    }
+                    document.querySelector('#img').setAttribute("src",currentImage+ ".jpg");
+                }
+                setInterval(next,5000);
+                */
+                
+                /*
+                    ex9
+
+                     function changeImg(el){
+                    let img=document.querySelector("#img");
+                    img.setAttribute("src",el.value);
+               }
+                */
+              
+                /*
+                   ex10
+
+                   function calculate(){
+                    let firstNumEl=document.querySelector("#firstNum");
+                    let secondNumEl=document.querySelector("#secondNum");
+                    let signEl=document.querySelector("#sign");
+                    let fn=parseFloat(firstNumEl.value);
+                    let sn=parseFloat(secondNumEl.value);
+                    let sign=signEl.value;
+                    let result='WRONG INPUT!';
+                    switch(sign){
+                        case "+":
+                            result=fn+sn;
+                            break;
+
+                        case "-":
+                             result=fn-sn;
+                        break;
+                        
+                        case "*":
+                           result=fn*sn;
+                        break;
+                            
+                        case "/":
+                                result=fn/sn;
+                        break;
+                    }
+                    document.querySelector("#result").innerHTML=result;
+               }
+                */
+               
+        </script>
+    </body>
+</html>
