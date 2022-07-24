@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div>
+            <label for="">Username</label>
+            <input type="text" id="username">
+            <span class="error" id="username-error"></span>
+        </div>
+        <div>
+            <label for="">Password</label>
+            <input type="text" id="password">
+            <span class="error" id="password-error"></span>
+        </div>
+        <div>
+            <label for="">Password confirm</label>
+            <input type="text" id="password-confirm">
+            <span class="error" id="password-confirm-error"></span>
+        </div>
+        <button onclick="register()"> Register </button>
+        <script>
+            function register() {
+                let usernameEl = document.querySelector('#username');
+                let passwordEl = document.querySelector('#password');
+                let passwordConfirmEl = document.querySelector('#password-confirm');
+                let usernameLength = usernameEl.value.length;
+                let passwordLength = passwordEl.value.length;
+                let password = passwordEl.value;
+                let passwordConfirm = passwordConfirmEl.value;
+                document.querySelector('#username-error').innerHTML = '';
+                document.querySelector('#password-error').innerHTML = '';
+                document.querySelector('#password-confirm-error').innerHTML = '';
+                if(usernameLength < 6 || usernameLength > 16) {
+                    document.querySelector('#username-error').innerHTML = 'Invalid username';
+                    return;
+                }
+
+                if(passwordLength < 6 || passwordLength > 32) {
+                    document.querySelector('#password-error').innerHTML = 'Invalid password';
+                    return;
+                }
+
+                if(password !== passwordConfirm) {
+                    document.querySelector('#password-confirm-error').innerHTML = 'Password doesn\'t match!';
+                    return;
+                }
+
+                alert('Send!');
+            }
+        </script>
+    </body>
+</html>
