@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers</title>
+</head>
+<body>
+    <label >Enter number from 1 to 10</label>
+    <br>
+    <input type="number" id="num">
+    <br>
+    <button onclick="check()">Check</button>
+    <script>
+        function check(){
+            let num=document.querySelector("#num").value;
+            if(num<=10 && num>0){
+                if(num==1){
+                    alert("This is not a prime number!");
+                }
+                else if(num%1==0 && num%num==0)
+                {
+                    alert("This is prime number!");
+                }  
+            }
+            else{
+                alert("Please enter number from 1 to 10!");
+            }
+        }
+    </script>
+</body>
+</html>
