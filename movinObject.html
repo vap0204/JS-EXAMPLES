@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Object</title>
+    <style>
+       .container{
+            width: 100%;
+            padding: 100px;
+            
+       }
+
+        #box{
+            background-color: aqua;
+            height: 100px;
+            width: 100px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box"></div> 
+    </div>
+    
+    <br>
+    <button onclick="moveUp()">UP</button>
+    <button onclick="movingDown()">DOWN</button>
+    <button onclick="movingRight()">RIGHT</button>
+    <button onclick="movingLeft()">LEFT</button>
+    <script>
+        function moveUp(){
+            var moving=document.querySelector("#box");
+            moving.setAttribute("style","bottom: 100px;");
+            moving.setAttribute("position: relative;", "bottom: 100px;")
+        }
+
+        function movingDown(){
+            var moving=document.querySelector("#box");
+            moving.setAttribute("style","top: 100px;");
+            moving.setAttribute("position: relative;", "top: 100px;")
+        }
+
+        function movingRight(){
+            var moving=document.querySelector("#box");
+            moving.setAttribute("style","left: 100px;");
+            moving.setAttribute("position: relative;", "left: 100px;")
+        }
+        function movingLeft(){
+            var moving=document.querySelector("#box");
+            moving.setAttribute("style","right: 100px;");
+            moving.setAttribute("position: relative;", "right: 100px;")
+        }
+    </script>
+</body>
+</html>
