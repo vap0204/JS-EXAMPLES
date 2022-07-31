@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello!</title>
+</head>
+<body>
+    <label>Enter your name</label>
+    <br>
+    <input type="text" id="name">
+    <button onclick="login()">Login</button>
+    <div id="result"></div>
+    <script>
+        function login(){
+            let greetings=document.querySelector("#name").value;
+            let result = document.querySelector("#result");
+            result.innerHTML=" <span\">Hello, </span>" +greetings ;
+            console.log("Hello",greetings,"!");
+        }
+    </script>
+</body>
+</html>
