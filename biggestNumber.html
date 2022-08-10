@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biggest Number</title>
+</head>
+<body>
+    <input type="number" id="num1"><br>
+    <input type="number" id="num2"><br>
+    <input type="number" id="num3"><br>
+    <input type="number" id="num4"><br>
+    <input type="number" id="num5"><br>
+   <button onclick="big()">Biggest number</button>
+
+    <script>
+        function big(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let num3 =  parseFloat(document.getElementById("num3").value);
+            let num4 =  parseFloat(document.getElementById("num4").value);
+            let num5 = parseFloat(document.getElementById("num5").value);
+            var biggestNumb = Math.max((num1),(num2),(num3),(num4),(num5));
+            alert(biggestNumb);
+        }
+    </script>
+
+</body>
+</html>
