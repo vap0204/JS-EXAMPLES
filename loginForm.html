@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=	, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        .container{
+            padding-bottom: 1rem;
+        }
+
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="">Email</label><br>
+        <input type="text" id="email">
+        <span class="error" id="mail-error"></span><br>
+        <label for="">Парола</label><br>
+        <input type="password" id="password">
+        <span class="error" id="password-error"></span>
+    </div>
+    <button onclick="login()">Вход</button>
+    <script>
+        function login(){
+            let mail=document.querySelector('#email');
+            let mailLength=mail.value.length;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            let pass=document.querySelector('#password');
+            let passLength=pass.value.length;
+            if(passLength<=0 || mailLength<=0){
+                alert("Имате непопълнено поле! ");
+            }
+            else if(  mailLength>=20 || !(mail.value.match(mailformat))){
+                document.querySelector('#mail-error').innerHTML = 'Въведете валиден имейл!';
+                    return;
+            }
+            else if (passLength < 6) {
+                    document.querySelector('#password-error').innerHTML = 'Въведете валидна парола!';
+                    return;
+                }
+            else {
+                alert('Успешно влизане!');
+            }   
+            
+        }
+    </script>
+
+</body>
+</html>
