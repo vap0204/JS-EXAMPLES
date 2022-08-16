@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://google.bg" id="google">X</a> <br/>
+    <a href="https://google.bg" onclick="return varTwo();">X1</a>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        function varTwo() {
+            return confirm('Are you sure?');
+        }
+
+        $(function(){
+            $('#google').click(function(event){
+                let choice = confirm('Are you sure?');
+                if(choice !== true) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
