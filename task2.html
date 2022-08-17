@@ -7,29 +7,31 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 
+        Създайте текстово поле и бутон. При натискане на бутона 
+        се създава select с N брой избора от 1 до въведеното число N
+    -->
     <div>
-        <button onclick="add()">Add</button>
-        <div id="container">
-
-        </div>
+        <input type="text" id="number">
+        <button id="btn">Create</button>
     </div>
-    <script>
-       let counter = 0;
-       function add() {
-        let el = document.querySelector('#container');
-        let html = `<div id="item${counter}">`;
-        html += '<input type="text" />';
-        html += `<button onclick="deleteItem(${counter})">X</button>`;
-        html += '</div>';
-        //el.innerHTML += html;
-        el.insertAdjacentHTML('beforeEnd', html);
-        counter++;
-       }
+    <div id="container"></div>
 
-       function deleteItem(num) {
-            let el = document.querySelector(`#item${num}`);
-            el.remove();
-       }
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+                let html = '<select>';
+                let number = parseInt($('#number').val());
+                for(let i = 1; i <= number; i++) {
+                    html += `<option>${i}</option>`;
+                    //html += '<option>' +  i + '</option>';
+                }
+
+                html += '</select>';
+                $('#container').html(html);
+            });
+        });
     </script>
 </body>
 </html>
