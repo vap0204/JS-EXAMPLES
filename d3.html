@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Създайте select с числата от 1 до 5 и празно. 
+        При избор на число се добавят N брой текстови полета
+    -->
+    <select id="option">
+        <option value="">Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <div id="container">
+
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            $('#option').change(function(){
+                //$('#option').val() === $(this).val()
+                let number = parseInt( $(this).val() );
+                let html = '';
+                for(let i = 0; i < number; i++) {
+                    html += '<div><input type="text" /></div>';
+                }
+
+                $('#container').html(html);
+            });
+        });
+    </script>
+</body>
+</html>
