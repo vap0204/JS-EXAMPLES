@@ -7,17 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- 5.	Вземете стойност от текстово поле, като използвате jQuery -->
-    <input type="text" id="textField">
-    <button id="btn">Get Text</button>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- 
+        Преобразувайте стринг към JSON и JSON към стринг.
+    -->
+    <script src="jquery.js"></script>
     <script>
-        $(function(){
-            $('#btn').click(function(){
-                let val = $('#textField').val();
-                console.log(val);
-            });
-        });
+        let str = '{"name": "Gosho", "age": 30, "city": "Plovdiv"}';
+        console.log(str);
+        let human = JSON.parse(str);
+        console.log(human);
+        human.name = "Georgi";
+        human.age = 31;
+        human.city = "Varna";
+        console.log(human);
+        let finalStr = JSON.stringify(human);
+        console.log(finalStr);
     </script>
 </body>
 </html>
